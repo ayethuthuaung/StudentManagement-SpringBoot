@@ -31,15 +31,15 @@
 							<div class="card">
 								<div class="card-body">
 									<h4 class="card-title">Admin Register</h4>
-									<form action="/addbook" method="post" th:object="${bookBean}" >
+									<form  method="post" class="form-sample" th:object="${userDto}" >
 										<div style="color: red">${error}</div>
 										<div class="row">
 											<div class="col-md-6">
 												<div class="form-group row">
 													<label class="col-sm-3 col-form-label">Code</label>
 													<div class="col-sm-9">
-														<form:input type="text" class="form-control"
-															value="${adminCode }" path="code" readonly="true" />
+														<input type="text" class="form-control"
+															   th:field="*{code}">
 													</div>
 												</div>
 											</div>
@@ -47,8 +47,8 @@
 												<div class="form-group row">
 													<label class="col-sm-3 col-form-label">Name</label>
 													<div class="col-sm-9">
-														<form:input type="text" class="form-control" path="name" />
-														<form:errors path="name" style="color:red;"></form:errors>
+														<input type="text" class="form-control" th:field="*{name}" />
+
 													</div>
 												</div>
 											</div>
@@ -58,8 +58,8 @@
 												<div class="form-group row">
 													<label class="col-sm-3 col-form-label">Phone</label>
 													<div class="col-sm-9">
-														<form:input type="text" class="form-control" path="phone" />
-														<form:errors path="phone" style="color:red;"></form:errors>
+														<input type="text" class="form-control"th:field="*{phone}" />
+
 													</div>
 												</div>
 											</div>
@@ -67,8 +67,8 @@
 												<div class="form-group row">
 													<label class="col-sm-3 col-form-label">Email</label>
 													<div class="col-sm-9">
-														<form:input type="email" class="form-control" id="to" path="email" />
-														<form:errors path="email" style="color:red;"></form:errors>
+														<input type="email" class="form-control" id="to" th:field="*{email}" />
+
 													</div>
 												</div>
 											</div>
@@ -79,31 +79,19 @@
 													<label class="col-sm-3 col-form-label">Date of
 														Birth</label>
 													<div class="col-sm-9">
-														<form:input type="date" class="form-control" path="dob" />
-														<form:errors path="dob" style="color:red;"></form:errors>
+														<input type="date" class="form-control" th:field="*{dob}" />
+
 													</div>
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form-group row">
 													<label class="col-sm-3 col-form-label">Gender</label>
-													<div class="col-sm-4">
-														<div class="form-check">
-															<label class="form-check-label"> <form:radiobutton
-																	class="form-check-input" path="gender"
-																	id="genderRadioMale" value="Male" checked="checked" />
-																Male
-															</label>
-														</div>
+													<div class="col-sm-9">
+														<input type="text" class="form-control" th:field="*{gender}" />
+
 													</div>
-													<div class="col-sm-5">
-														<div class="form-check">
-															<label class="form-check-label"> <form:radiobutton
-																	class="form-check-input" path="gender"
-																	id="genderRadioFemale" value="Female" /> Female
-															</label>
-														</div>
-													</div>
+
 												</div>
 											</div>
 										</div>
@@ -113,11 +101,23 @@
 												<div class="form-group row">
 													<label class="col-sm-2 col-form-label">Address </label>
 													<div class="col-sm-9">
-														<form:input type="text" class="form-control"
-															path="address" />
-															<form:input type="hidden" class="form-control"
-															path="password" id="passwordInput" />
-														<form:errors path="address" style="color:red;"></form:errors>
+														<input type="text" class="form-control"
+															   th:field="*{address}" />
+
+
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<div class="form-group row">
+													<label class="col-sm-2 col-form-label">Password </label>
+													<div class="col-sm-9">
+
+														<input type="text" class="form-control"
+															   th:field="*{password}" id="passwordInput" />
+
 													</div>
 												</div>
 											</div>
@@ -134,7 +134,7 @@
 						</div>
 					</div>
 				</div>
-				<jsp:include page="footer.jsp"></jsp:include>
+				<!--footer-->
 			</div>
 			
 			<!-- main-panel ends -->
@@ -143,18 +143,18 @@
 	</div>
 	<!-- container-scroller -->
 	<!-- plugins:js -->
-	<script src="assets/vendors/js/vendor.bundle.base.js"></script>
+	<script src="/assets/vendors/js/vendor.bundle.base.js"></script>
 	<!-- endinject -->
 	<!-- Plugin js for this page -->
 	<!-- End plugin js for this page -->
 	<!-- inject:js -->
-	<script src="assets/js/off-canvas.js"></script>
-	<script src="assets/js/hoverable-collapse.js"></script>
-	<script src="assets/js/misc.js"></script>
+	<script src="/assets/js/off-canvas.js"></script>
+	<script src="/assets/js/hoverable-collapse.js"></script>
+	<script src="/assets/js/misc.js"></script>
 	<!-- endinject -->
 	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 	<!-- Custom js for this page -->
-	<script src="assets/js/file-upload.js"></script>
+	<script src="/assets/js/file-upload.js"></script>
 	<!-- End custom js for this page -->
 	<script src="assets/js/mailService.js"></script>
 	<script src="assets/js/validation.js"></script>  
